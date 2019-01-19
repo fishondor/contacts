@@ -1,4 +1,15 @@
+# Contacts Example Task
+
+This is an example project for contacts list created with React.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Run local development
+
+* Clone this repository
+* `npm install`
+* `npm start`
+* App will be served in http://localhost:3000
 
 ## Available Scripts
 
