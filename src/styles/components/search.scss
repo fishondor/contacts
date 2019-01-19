@@ -1,0 +1,30 @@
+@import '../../constants/styles.scss';
+
+.search-wrapper{
+    display: inline-flex;
+    border-radius: 1em;
+    background-color: white;
+    align-items: center;
+    input.search{
+        border: none;
+        width: 200px;
+        background-color: transparent;
+        margin-left: 10px;
+        &::placeholder{
+            color: $color-disabled;
+        }
+        &:focus{
+            outline: none;
+        }
+        @media only screen and (max-width: 600px) {
+            width: 100px;
+        }
+    }
+    .search-icon{
+        height: 70%;
+        cursor: pointer;
+        @media only screen and (max-width: 600px) {
+            margin-right: 3px;
+        }
+    }
+}
