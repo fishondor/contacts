@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import ContactsList from './components/ContactsList';
+import Navbar from './components/Navbar';
+import './App.scss';
+
+import * as ContactsAPI from './providers/ContactsApi';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contacts: []
+    }
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+  componentDidMount() {
+    ContactsAPI.getAll()
+      .then((contacts) => {
+        this.setState({ contacts })
+      })
+  }
+  handleSearch(value){
+    //UPDATE LIST WITH SEARCH RESULTS
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Navbar onSearch={this.handleSearch}></Navbar>
+        <ContactsList contacts={this.state.contacts}></ContactsList>
       </div>
     );
   }
