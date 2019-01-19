@@ -1,0 +1,18 @@
+@import '../../constants/styles.scss';
+
+.navbar{
+    width: 100%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    background-color: $color-main;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    p{
+        margin: 0;
+    }
+    .title{
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+}
